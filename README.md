@@ -1,3 +1,5 @@
 # How to run the project
-1.pip install -r requirements.txt
-2.python main.py
+1. clone the project
+2. cd to the cloned project
+2. run pip install -r requirements.txt in your terminal
+3. run python main.py
