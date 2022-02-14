@@ -94,20 +94,20 @@ def _plot(f_df, trn_df, dev_df, t_df):
         Test Data
     """
     # training function 1 graph
-    f1 = figure(title="Training function 1")
-    f1.circle(f_df.x.to_list(), f_df[f_df.columns[1]].to_list(), color='red', legend_label='Ideal Function 1')
+    f1 = figure(title="Training Function 1")
+    f1.circle(f_df.x.to_list(), f_df[f_df.columns[1]].to_list(), color='red', legend_label='Ideal Function ' + f_df.columns[1])
     f1.line(trn_df.x.to_list(), trn_df.train_y1.to_list(), color='black', legend_label='Training 1')
     # training function 2 graph
-    f2 = figure(title="Training function 2")
-    f2.circle(f_df.x.to_list(), f_df[f_df.columns[2]].to_list(), color='yellowgreen', legend_label='Ideal Function 2')
+    f2 = figure(title="Training Function 2")
+    f2.circle(f_df.x.to_list(), f_df[f_df.columns[2]].to_list(), color='yellowgreen', legend_label='Ideal Function ' + f_df.columns[2])
     f2.line(trn_df.x.to_list(), trn_df.train_y2.to_list(), color='teal', legend_label='Training 2')
     # training function 3 graph
-    f3 = figure(title="Training function 3")
-    f3.circle(f_df.x.to_list(), f_df[f_df.columns[3]].to_list(), color='blue', legend_label='Ideal Function 3')
+    f3 = figure(title="Training Function 3")
+    f3.circle(f_df.x.to_list(), f_df[f_df.columns[3]].to_list(), color='blue', legend_label='Ideal Function ' + f_df.columns[3])
     f3.line(trn_df.x.to_list(), trn_df.train_y3.to_list(), color='red', legend_label='Training 3')
     # training function 4 graph
-    f4 = figure(title="Training function 4")
-    f4.circle(f_df.x.to_list(), f_df[f_df.columns[4]].to_list(), color='orange', legend_label='Ideal Function 4')
+    f4 = figure(title="Training Function 4")
+    f4.circle(f_df.x.to_list(), f_df[f_df.columns[4]].to_list(), color='orange', legend_label='Ideal Function ' + f_df.columns[4])
     f4.line(trn_df.x.to_list(), trn_df.train_y4.to_list(), color='green', legend_label='Training 4')
     # Test Vs Training Ideal Data graph
     f5 = figure(title="Test Vs Training Ideal Data")
