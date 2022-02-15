@@ -1,4 +1,6 @@
+import sqlite3
 import pandas as pd
+import unittest
 from bokeh.layouts import gridplot
 from bokeh.palettes import Spectral4
 from bokeh.plotting import figure, show
@@ -127,6 +129,15 @@ def _plot(f_df, trn_df, dev_df, t_df):
     grid = gridplot([[f1, f2], [f3, f4], [f5, f6]], width=1200, height=600)
     show(grid)
 
+# Unit test to check whether the connection to the db was successful or not
+class DbConnection(unittest.TestCase):
+    def test(self):   
+        try:
+            self.connection = sqlite3.connect('data.db')
+        except:
+            print('Error')
+        finally:
+            pass
 
 if __name__ == "__main__":
     sqlite_utils = SQLLiteUtils(conn_string=SQLITE_CONN_STRING)
@@ -155,3 +166,4 @@ if __name__ == "__main__":
     # Table 4: The database table of the test-data, with mapping and y-deviation
     test_map_df = test_map_df[['x', 'y', 'delta_y', 'ideal_func']]
     sqlite_utils.put_df(df=test_map_df, table='test_map', conn_string=SQLITE_CONN_STRING)
+    unittest.main()
